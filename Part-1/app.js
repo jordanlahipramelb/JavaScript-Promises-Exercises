@@ -42,11 +42,11 @@ Promise.all(
 });
 
 // The way that is shown in the solution, still displays undefined
-// Promise.all(
-//   Array.from({ length: 4 }, () => {
-//     return $.getJSON(`${url}${multNums}?json`);
-//   })
-// ).then((facts) => {
-//   facts.forEach((data) => $('body').append(`<p>${data.text}</p>`));
-//   console.log(facts);
-// });
+Promise.all(
+  Array.from({ length: 4 }, () => {
+    return $.getJSON(`${url}${multNums}?json`);
+  })
+).then((facts) => {
+  facts.forEach((data) => $('body').append(`<p>${data.text}</p>`));
+  console.log(facts);
+});
