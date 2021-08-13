@@ -2,7 +2,7 @@ const BASE_URL = 'https://deckofcardsapi.com/api/deck';
 
 //////////////////////////////////
 // Using axios.get
-1;
+// 1;
 axios
   .get(`${BASE_URL}/new/draw`)
   .then((res) =>
@@ -12,7 +12,7 @@ axios
   );
 
 //   using $.getJSON
-1;
+// 1;
 $.getJSON(`${BASE_URL}/new/draw`).then((data) => {
   let { suit, value } = data.cards[0];
   console.log(`${value.toLowerCase()} of ${suit.toLowerCase()}`);
