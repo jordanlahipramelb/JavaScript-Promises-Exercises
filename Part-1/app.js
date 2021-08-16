@@ -29,24 +29,11 @@ $.getJSON(`${url}${multNums}?json`).then((data) => {
 /////////////////////////////////
 // 3.
 
-// ! keeps displaying undefined on page
-Promise.all(
-  Array.from({ length: 4 }, () => {
-    return $.getJSON(`${url}${multNums}?json`);
-  })
-).then((facts) => {
-  for (res of facts) {
-    $('body').append(`<p>${res.data}</p>`);
-  }
-  console.log(res);
-});
-
 // The way that is shown in the solution, still displays undefined
 Promise.all(
   Array.from({ length: 4 }, () => {
-    return $.getJSON(`${url}${multNums}?json`);
+    return $.getJSON(`${baseURL}/${favNumber}?json`);
   })
 ).then((facts) => {
   facts.forEach((data) => $('body').append(`<p>${data.text}</p>`));
-  console.log(facts);
 });
